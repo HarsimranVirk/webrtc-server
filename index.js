@@ -42,6 +42,9 @@ app.delete("/live/:id", (req, res) => {
   res.json({ lives });
 });
 
-httpServer.listen(80, () => {
+const port = process.env.PORT || 3000;
+
+httpServer.listen(port, (err) => {
+  if (err) throw err;
   console.log("Started listening at port 80...");
 });
